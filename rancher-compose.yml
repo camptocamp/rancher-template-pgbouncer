@@ -9,12 +9,12 @@
     - variable: "USERLIST"
       label: "userlist.txt"
       description: "Content of userlist.txt"
-      type: "string"
+      type: "multiline"
       required: true
     - variable: "PG_HBA"
       label: "pg_hba.conf"
       description: "Content of pg_hba.conf"
-      type: "string"
+      type: "multiline"
       required: true
     - variable: "TARGET_HOST"
       label: "Target host"
