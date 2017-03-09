@@ -1,9 +1,9 @@
 ---
 .catalog:
   name: "pgbouncer"
-  version: "v1.7.2-1"
+  version: "v1.7.2-2"
   description: "Pgbouncer Stack"
-  uuid: pgbouncer-0
+  uuid: pgbouncer-1
   minimum_rancher_version: v1.0.0
   questions:
     - variable: "USERLIST"
