@@ -1,0 +1,11 @@
+version: '2'
+services:
+  pgbouncer:
+    image: camptocamp/pgbouncer:1.7.2
+    environment:
+      USERLIST: "${USERLIST}"
+      PG_HBA: "${PG_HBA}"
+    external_links:
+      - "${TARGET_HOST}:db"
+    ports:
+    - "${LISTEN_PORT}:6432/tcp"
