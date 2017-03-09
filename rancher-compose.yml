@@ -20,7 +20,7 @@
       label: "Target host"
       description: "Target Postgresql database"
       type: "service"
-      default: "lb.postgres-cluster"
+      default: "postgres-cluster/lb"
       required: true
     - variable: "LISTEN_PORT"
       label: "Listen Port"
