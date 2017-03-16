@@ -3,8 +3,12 @@ services:
   pgbouncer:
     image: camptocamp/pgbouncer:1.7.2
     environment:
-      USERLIST: "${USERLIST}"
-      PG_HBA: "${PG_HBA}"
+      USERLIST: |
+        "${USERLIST}"
+      PG_HBA: |
+        "${PG_HBA}"
+      DB_MAPPING: |
+        "${DB_MAPPING}"
     external_links:
       - "${TARGET_HOST}:db"
     ports:

@@ -16,6 +16,13 @@
       description: "Content of pg_hba.conf"
       type: "multiline"
       required: true
+    - variable: "DB_MAPPING"
+      label: "Db Mapping"
+      description: "Mapping between db name and hosts"
+      type: "multiline"
+      required: true
+      default: |
+        "* = host=db"
     - variable: "TARGET_HOST"
       label: "Target host"
       description: "Target Postgresql database"
