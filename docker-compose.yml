@@ -9,6 +9,7 @@ services:
         "${PG_HBA}"
       DB_MAPPING: |
         "${DB_MAPPING}"
+      CERTIFICATE_DESCRIPTION: "${CERTIFICATE_DESCRIPTION}"
     external_links:
       - "${TARGET_HOST}:db"
     ports:
