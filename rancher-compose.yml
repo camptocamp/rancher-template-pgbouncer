@@ -1,9 +1,9 @@
 ---
 .catalog:
   name: "pgbouncer"
-  version: "v1.7.2-2"
+  version: "v1.7.2-3"
   description: "Pgbouncer Stack"
-  uuid: pgbouncer-1
+  uuid: pgbouncer-2
   minimum_rancher_version: v1.0.0
   questions:
     - variable: "USERLIST"
@@ -16,6 +16,13 @@
       description: "Content of pg_hba.conf"
       type: "multiline"
       required: true
+    - variable: "DB_MAPPING"
+      label: "Db Mapping"
+      description: "Mapping between db name and hosts"
+      type: "multiline"
+      required: true
+      default: |
+        "* = host=db"
     - variable: "TARGET_HOST"
       label: "Target host"
       description: "Target Postgresql database"
@@ -26,6 +33,12 @@
       label: "Listen Port"
       description: "Listen Port for Pgbouncer"
       default: "5432"
+      required: true
+    - variable: "CERTIFICATE_DESCRIPTION"
+      label: "Certificate description"
+      description: "String used to generate server certificate"
+      type: "string"
+      default: "/C=FR/O=camptocamp"
       required: true
 
 pgbouncer:

@@ -3,9 +3,20 @@ services:
   pgbouncer:
     image: camptocamp/pgbouncer:1.7.2
     environment:
-      USERLIST: "${USERLIST}"
-      PG_HBA: "${PG_HBA}"
+      USERLIST: |
+        "${USERLIST}"
+      PG_HBA: |
+        "${PG_HBA}"
+      DB_MAPPING: |
+        "${DB_MAPPING}"
+      CERTIFICATE_DESCRIPTION: "${CERTIFICATE_DESCRIPTION}"
     external_links:
       - "${TARGET_HOST}:db"
     ports:
-    - "${LISTEN_PORT}:6432/tcp"
+      - "${LISTEN_PORT}:6432/tcp"
+    volumes:
+      - pgbouncer_certificate:/etc/pgbouncer/ssl
+
+volumes: 
+  pgbouncer_certificate:
+
